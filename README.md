@@ -16,7 +16,11 @@ django,
 numpy, 
 six,
 catboost,
-pystemmer
+pystemmer,
+vk(!)
 
 Итоговое приложение живет по адресу:
 http://13.84.171.59/ 
+
+про API VK читаем тут:
+https://habrahabr.ru/post/319178/ 
