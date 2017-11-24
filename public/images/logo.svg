@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="275px" height="65px" viewBox="0 0 275 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>85A0C18A-3FDF-4431-88D2-80215DCFEF19</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-13.7%" y="-6.7%" width="127.4%" height="113.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="1.50948661" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-13.7%" y="-6.7%" width="127.4%" height="113.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="1.50948661" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-13.7%" y="-6.7%" width="127.4%" height="113.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="1.50948661" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-13.7%" y="-6.7%" width="127.4%" height="113.3%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="1.50948661" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-13.7%" y="-6.7%" width="127.4%" height="113.3%" filterUnits="objectBoundingBox" id="filter-5">
+            <feGaussianBlur stdDeviation="1.50948661" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-13.7%" y="-6.7%" width="127.4%" height="113.3%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="1.50948661" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-13.7%" y="-6.7%" width="127.4%" height="113.3%" filterUnits="objectBoundingBox" id="filter-7">
+            <feGaussianBlur stdDeviation="1.50948661" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-13.7%" y="-6.7%" width="127.4%" height="113.3%" filterUnits="objectBoundingBox" id="filter-8">
+            <feGaussianBlur stdDeviation="1.50948661" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Index-1" transform="translate(-463.000000, -42.000000)">
+            <g id="Logo" transform="translate(459.000000, 30.000000)">
+                <text id="BrandFocus" font-family="Avenir-Book, Avenir" font-size="50" font-weight="normal" letter-spacing="1.42857158">
+                    <tspan x="0.398213136" y="50" fill="#FFFFFF">Brand</tspan>
+                    <tspan x="139.941071" y="50" letter-spacing="2.23214316" fill="#FFDE58">F</tspan>
+                    <tspan x="169.973214" y="50" font-family="Avenir-Black, Avenir" font-weight="700" letter-spacing="2.23214316" fill="#FFDE58">o</tspan>
+                    <tspan x="202.705357" y="50" letter-spacing="2.23214316" fill="#FFDE58">cus</tspan>
+                </text>
+                <text id="o" filter="url(#filter-2)" font-family="Avenir-Black, Avenir" font-size="50" font-weight="700" letter-spacing="2.23214316" fill="#FFDE58">
+                    <tspan x="170.133928" y="50">o</tspan>
+                </text>
+                <text id="o-copy" filter="url(#filter-4)" font-family="Avenir-Black, Avenir" font-size="50" font-weight="700" letter-spacing="2.23214316" fill="#FFDE58">
+                    <tspan x="170.133928" y="50">o</tspan>
+                </text>
+                <text id="o-copy-2" filter="url(#filter-6)" font-family="Avenir-Black, Avenir" font-size="50" font-weight="700" letter-spacing="2.23214316" fill="#FFDE58">
+                    <tspan x="170.133928" y="50">o</tspan>
+                </text>
+                <text id="o-copy-3" filter="url(#filter-8)" font-family="Avenir-Black, Avenir" font-size="50" font-weight="700" letter-spacing="2.23214316" fill="#FFDE58">
+                    <tspan x="170.133928" y="50">o</tspan>
+                </text>
+                <text id="Всё,-что-пишут-о-ваш" font-family="LucidaGrande, Lucida Grande" font-size="15" font-weight="normal" letter-spacing="0.720000029" fill="#AFAFAF">
+                    <tspan x="4" y="74">Всё, что пишут о вашей компани</tspan>
+                    <tspan x="270.888087" y="74">и</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
