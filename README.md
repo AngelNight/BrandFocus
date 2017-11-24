@@ -6,13 +6,17 @@
 
 необходимо установить следующее ПО:
 
-Visual C++ 2015 Build Tools
- ( http://landinghub.visualstudio.com/visual-cpp-build-tools )
-  Python 3.6.3 (x64, обязательно 64 битную версию!)
+Visual C++ 2015 Build Tools  ( http://landinghub.visualstudio.com/visual-cpp-build-tools )
+
+Python 3.6.3 (x64, обязательно 64 битную версию!)
+
 далее при помощи pip install:
-  wfastcgi
-  django
-  numpy
-  six
-  catboost
-  pystemmer
+wfastcgi,
+django,
+numpy, 
+six,
+catboost,
+pystemmer
+
+Итогое приложение живет по адресу:
+http://13.84.171.59/ 
