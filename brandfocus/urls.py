@@ -1,4 +1,4 @@
-"""helloworld URL Configuration
+"""brandfocus URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -31,7 +31,7 @@ urlpatterns = [
 
 from django.conf.urls import url
 from django.contrib import admin
-from helloworld.views import home
+from brandfocus.views import home
 
 urlpatterns = [
     url(r'^$', home, name='home'),
