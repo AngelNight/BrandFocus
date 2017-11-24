@@ -6,13 +6,21 @@
 
 необходимо установить следующее ПО:
 
-Visual C++ 2015 Build Tools
- ( http://landinghub.visualstudio.com/visual-cpp-build-tools )
-  Python 3.6.3 (x64, обязательно 64 битную версию!)
+Visual C++ 2015 Build Tools  ( http://landinghub.visualstudio.com/visual-cpp-build-tools )
+
+Python 3.6.3 (x64, обязательно 64 битную версию!)
+
 далее при помощи pip install:
-  wfastcgi
-  django
-  numpy
-  six
-  catboost
-  pystemmer
+wfastcgi,
+django,
+numpy, 
+six,
+catboost,
+pystemmer,
+vk_api(!)
+
+Итоговое приложение живет по адресу:
+http://52.173.83.176/
+
+про API VK читаем тут:
+https://habrahabr.ru/post/319178/ 
