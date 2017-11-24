@@ -17,7 +17,7 @@ numpy,
 six,
 catboost,
 pystemmer,
-vk(!)
+vk_api(!)
 
 Итоговое приложение живет по адресу:
 http://13.84.171.59/ 
