@@ -34,7 +34,27 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from brandfocus.views import home
+from brandfocus.base import gettags
+from brandfocus.base import getreviews
+from brandfocus.base import insertfirm
+from brandfocus.base import inserttag
+from brandfocus.base import insertsocial
+from brandfocus.base import insertrank
+from brandfocus.base import deletetag
+from brandfocus.base import getfirms
+from brandfocus.base import getranks
+from brandfocus.base import getsocials
 
 urlpatterns = [
     url(r'^$', home, name='home'),
+    url(r'getTags/$', gettags, name='gettags'),
+    url(r'getReviews/$', getreviews, name='gettags'),
+    url(r'insertFirm/$', insertfirm, name='insertfirm'),
+    url(r'insertTag/$', inserttag, name='inserttag'),
+    url(r'insertRank/$', insertrank, name='insertrank'),
+    url(r'insertSocial/$', insertsocial, name='insertsocial'),
+    url(r'deleteTag/$', deletetag, name='deletetag'),
+    url(r'getFirms/$', getfirms, name='getfirms'),
+    url(r'getRanks/$', getranks, name='getranks'),
+    url(r'getSocials/$', getsocials, name='getsocials'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
