@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -27,7 +26,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    '13.84.171.59'
+    '13.84.171.59',
+    '127.0.0.1'
 ]
 
 
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.db.backends.postgresql_psycopg2',
+    'brandfocus'
 ]
 
 MIDDLEWARE = [
@@ -78,8 +80,12 @@ WSGI_APPLICATION = 'brandfocus.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'qwerty',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
