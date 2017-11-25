@@ -109,16 +109,17 @@ body {
 
 #feedback_date {
   float: left;
-  margin-left: 10px;
-  margin-top: 16px;
+  margin-top: -10px;
+  margin-left: -8px;
 }
 
 .social_nw button {
   float: left;
+  margin-left: -16px;
 }
 
 .feedback {
-  background-color: #D1FFD1;
+  background-color: #e8ffeb;
   border-radius: 4px;
 }
 
@@ -128,6 +129,7 @@ body {
 
 .fb_head {
   margin-left: 16px;
+  margin-bottom: -16px;
 }
 
 @media (max-width: 1090px) and (min-width: 870px) {
@@ -215,4 +217,86 @@ body {
   line-height: 1.5;
   text-align: center;
   color: #ffffff;
+}
+
+.social_nw {
+  float: left;
+  margin-top: 16px;
+}
+
+#avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 23px;
+  float: left;
+  margin-right: 16px;
+  border: solid 1px #cccccc;
+}
+
+.feedback {
+  font-family: Tahoma;
+  font-size: 14px;
+  text-align: left;
+  color: #4a4a4a;
+  margin-bottom: 2px;
+}
+
+#username {
+  font-size: 18px;
+}
+
+#social_nw_name {
+  font-size: 12px;
+  margin-top: -21px;
+  font-family: Tahoma;
+  color: #537499;
+}
+
+.mistake_btn button {
+  font-family: Tahoma;
+  color: #537499;
+  font-size: 12px;
+  margin-top: 16px;
+}
+
+.open>.dropdown-menu {
+  margin-left: 80px;
+}
+
+.btn-group-vertical .btn{
+  width: 268px;
+  height: 36px;
+  border: none;
+  padding: 3px;
+  margin-bottom: 4px;
+  border-left: solid 3px white;
+  border-radius: none;
+}
+
+.btn-group-vertical .btn:focus{
+  outline: none;
+  border-left: solid 3px #86A8DF;
+  background-color: #f4fafd !important;
+}
+.btn-group-vertical .btn:hover{
+  background-color: white;
+}
+.btn-group-vertical .btn p{
+  margin-top: 3px;
+  font-family: Tahoma;
+  font-size: 18px;
+  text-align: left;
+  color: #4a4a4a;
+}
+
+.btn-group-vertical .btn:active{
+  box-shadow: none;
+}
+
+.btn-group-vertical .btn img{
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-right: 12px;
+  margin-left: 0;
 }
