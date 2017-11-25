@@ -5,18 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Brand Focus</title>
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/styles.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="/static/images/BrandFocus-logo.jpg"/>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/styles.css" rel="stylesheet">
   </head>
   <body>
     <div class = "top_panel">
-      <img src="/static/images/logo.png" srcset="/static/images/logo@2x.png 2x, /static/images/logo@3x.png 3x" class="Logo">
+      <img src="../static/images/logo.png" srcset="../static/images/logo@2x.png 2x, ../static/images/logo@3x.png 3x" class="Logo">
     </div>
 
     <div class = "content">
       <div class = "row">
        <div  class="col-sm-4">
+
+        <div class="searchSettings">
+              <p>Отслеживаемые</p>
+              <div class="btn-group-vertical">
+                <button type="button" class="btn btn-default" value="Тензор">
+                  <img src="/static/images/tensor-logo.png">
+                  <p>Тензор</p>
+                </button>
+                <button type="button" class="btn btn-default"">
+                  <img src="/static/images/SBK-logo.png">
+                  <p>СБК Контур</p>
+                </button>
+                <button type="button" class="btn btn-default"">
+                  <img src="/static/images/microsoft-logo.png">
+                  <p>Майкрософт</p>
+                </button>
+                <button type="button" class="btn btn-default"">
+                  <img src="/static/images/mili-logo.png">
+                  <p>Ресторан Мили</p>
+                </button>
+            </div>
+            </div>
+
+
         <div class = "searchSettings" id="focusing">
           <p>Фокусировка</p>
        <div>
@@ -67,13 +90,86 @@
               <div class = "feedback">
                 <div class = "fb_head row">
                   <div class = "col-sm-6 social_nw row">
+
+                    <img src = "/static/images/avatar.png" id = "avatar">
+                    <p id = "username">Ivan Ivanov</p>
+
                     <button type="button" class="btn btn-lg btn-link">
                       <p id = "social_nw_name">VK</p>
                     </button>
                     <p id = "feedback_date">11.01.2011</p>
                   </div>
                   <div class = "col-sm-6 mistake_btn">
-                    <button type="button" class="btn btn-link">Mistake?</button>
+                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="caret" float="right">Ошибка</span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">   
+                      <li role="presentation"><a role="menuitem" href="#">Положительный</a></li>
+                      <li role="presentation"><a role="menuitem" href="#">Отрицательный</a></li>
+                      <li role="presentation"><a role="menuitem" href="#">Неопределенный</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class = "feedback_text">
+                  <p id = "fb_text">
+                    Стабильная ЗП; современное здание; молодой коллектив; корпоративные мероприятия; зоны отдыха для сотрудников; спорт.зал; возможность карьерного роста и т.д. 
+                    Самое главное - это стабильная ЗП: ты точно знаешь, когда она придёт и сколько. 
+                    Если говорят, что тут нет возможности карьерного роста - не верьте. Она есть! Всё зависит от человека, желания (в меньшей степени от отдела (в каждом отделе своя мотивация: где-то проще, где-то сложнее)). 
+                    Если ты разработчик, то ЗП повыше, чем у остальных, возможностей побольше. В других отделах перспектив поменьше, но они есть и зачастую немалые... 
+                    Руководство....ну оно и в Африке руководство! Не бывает идеального начальника. 
+                    Но в целом, всё неплохо. Руководство адекватное. 
+                  </p>
+                </div>
+              </div>
+              <div class = "feedback" style="background-color: #ffefed">
+                <div class = "fb_head row">
+                  <div class = "col-sm-6 social_nw row">
+
+                    <img src = "/static/images/avatar.png" id = "avatar">
+                    <p id = "username">Ivan Ivanov</p>
+
+                    <button type="button" class="btn btn-lg btn-link">
+                      <p id = "social_nw_name">VK</p>
+                    </button>
+                    <p id = "feedback_date">11.01.2011</p>
+                  </div>
+                  <div class = "col-sm-6 mistake_btn">
+                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="caret" float="right">Ошибка</span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">   
+                      <li role="presentation"><a role="menuitem" href="#">Положительный</a></li>
+                      <li role="presentation"><a role="menuitem" href="#">Отрицательный</a></li>
+                      <li role="presentation"><a role="menuitem" href="#">Неопределенный</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class = "feedback_text">
+                  <p id = "fb_text">
+                    Стабильная ЗП; современное здание; молодой коллектив; корпоративные мероприятия; зоны отдыха для сотрудников; спорт.зал; возможность карьерного роста и т.д. 
+                    Самое главное - это стабильная ЗП: ты точно знаешь, когда она придёт и сколько. 
+                    Если говорят, что тут нет возможности карьерного роста - не верьте. Она есть! Всё зависит от человека, желания (в меньшей степени от отдела (в каждом отделе своя мотивация: где-то проще, где-то сложнее)). 
+                    Если ты разработчик, то ЗП повыше, чем у остальных, возможностей побольше. В других отделах перспектив поменьше, но они есть и зачастую немалые... 
+                    Руководство....ну оно и в Африке руководство! Не бывает идеального начальника. 
+                    Но в целом, всё неплохо. Руководство адекватное. 
+                  </p>
+                </div>
+              </div>
+              <div class = "feedback" style="background-color: #f8f8f8">
+                <div class = "fb_head row">
+                  <div class = "col-sm-6 social_nw row">
+
+                    <img src = "/static/images/avatar.png" id = "avatar">
+                    <p id = "username">Ivan Ivanov</p>
+
+                    <button type="button" class="btn btn-lg btn-link">
+                      <p id = "social_nw_name">VK</p>
+                    </button>
+                    <p id = "feedback_date">11.01.2011</p>
+                  </div>
+                  <div class = "col-sm-6 mistake_btn">
+                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="caret" float="right">Ошибка</span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">   
+                      <li role="presentation"><a role="menuitem" href="#">Положительный</a></li>
+                      <li role="presentation"><a role="menuitem" href="#">Отрицательный</a></li>
+                      <li role="presentation"><a role="menuitem" href="#">Неопределенный</a></li>
+                    </ul>
                   </div>
                 </div>
                 <div class = "feedback_text">
@@ -96,8 +192,8 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/scripts.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/scripts.js"></script>
   </body>
 </html>
 
@@ -105,4 +201,6 @@
 id = "social_nw_name" - имя социальной сети
 id = "feedback_date" - дата написания комментария
 id = "fb_text" - текст комментария
+id = "avatar" - аватар пользователя
+id = "username" - имя пользователя
 -->
