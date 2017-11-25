@@ -80,6 +80,7 @@
                 success: function (result) {
                    console.log(result);
                    if ( result !== 'False' ){
+                       $("#keyWords").removeAttr("disabled");
                        placeTags(result);
                    }
                 },
