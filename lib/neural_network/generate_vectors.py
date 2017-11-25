@@ -27,20 +27,3 @@ def write_vectors_to_file(vectors, path_to_file):
 	with open(path_to_file, 'w', encoding = 'utf-8') as file:
 		file.write(str(vectors))
 		file.close()
-
-"""
-EXAMPLE USAGE:
-
-posts = [
-			['ага', 'так'],
-			['не', 'потому'],
-			['кукуку', 'вавава', 'лолололо']
-	    ]
-
-dictionary = open('data/dictionary.txt', 'r', encoding = 'utf-8')
-vectors = initialize_vectors_array(posts, eval(dictionary.read()))
-dictionary.close()
-print(vectors)
-write_vectors_to_file(vectors, 'data/vectors.txt')
-
-"""
