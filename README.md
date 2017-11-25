@@ -33,7 +33,7 @@ https://djbook.ru/rel1.4/intro/tutorial02.html
 
 
 Install package's:
-requests
-vk_api
-pystemmer
+requests,
+vk_api,
+pystemmer,
 python-twitter
