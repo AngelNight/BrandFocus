@@ -81,7 +81,7 @@ class Vk_ParserReviews(ParserReviews):
         return d
 
     def _datetime_from_unixtime(self, value):
-        return datetime.datetime.fromtimestamp(value).strftime('%d.%m.%Y')
+        return datetime.datetime.fromtimestamp(value).strftime('%Y-%m-%d')
 
     def _get_post_link(self, user_id, screen_name, post_id):
         return "https://vk.com/{}?w=wall{}_{}".format(screen_name, user_id, post_id)

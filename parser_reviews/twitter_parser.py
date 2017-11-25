@@ -59,4 +59,4 @@ class Twitter_ParserReviews(ParserReviews):
         return 'https://twitter.com/{}/status/{}'.format(screen_name, post_id)
 
     def _get_date(self, twitter_date):
-        return time.strftime('%d.%m.%Y', time.strptime(twitter_date, '%a %b %d %H:%M:%S +0000 %Y'))
+        return time.strftime('%Y-%m-%d', time.strptime(twitter_date, '%a %b %d %H:%M:%S +0000 %Y'))

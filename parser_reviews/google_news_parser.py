@@ -57,4 +57,4 @@ class GoogleNews_ParserReviews(ParserReviews):
 
     def _get_date(self, date):
         date = date[:10].split('-')
-        return '.'.join(reversed(date))
+        return '-'.join(date)
