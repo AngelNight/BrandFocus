@@ -1,3 +1,5 @@
+from psqlextra.models import PostgresModel
+from psqlextra.fields import HStoreField
 from django.db import models
 
 class Social(models.Model):
@@ -54,15 +56,15 @@ class Tag(models.Model):
     class Meta:
         db_table = 'tag'   # имя таблицы
 
-class Review(models.Model):
+class Review(PostgresModel):
 
     # поля данных
     link = models.CharField(max_length=255) # Ссылка на отзыв
     text = models.TextField() # Текст отзыва
     date = models.DateField() # Дата поста
-    photo_link = models.TextField() # Ссылка на аватар
-    temp_id=models.CharField(max_length=255) # Временний ИД для загрузки поста
-    rank = models.IntegerField(default=None)  # Ранжирование по кэтбуст
+    photo_link = models.TextField(null=True) # Ссылка на аватар
+    temp_id=models.CharField(max_length=255, unique=True) # Временний ИД для загрузки поста
+    rank = models.IntegerField(default=0)  # Ранжирование по кэтбуст
     social = models.ForeignKey(Social) # Ключ на соц. сеть
     firm = models.ForeignKey(Firm) # Ключ на фирму
 
