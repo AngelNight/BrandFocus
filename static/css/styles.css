@@ -157,52 +157,36 @@ body {
   background-color: #ffffff;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08);
   padding-bottom: 10px;
-}
-.searchSettings h1{
-  width: 143px;
-  height: 29px;
-  font-family: Tahoma;
-  font-size: 24px;
-  text-align: left;
-  color: #666666;
-}
-.companySelect {
-  width: 268px;
-  height: 44px;
-  border-radius: 2px;
-  background-color: #ffffff;
-  border: solid 1px #cccccc;
+  margin-right: 10px;
 }
 .tagSelect {
   padding: 4px;
-  width: 100%;
+  width: calc(100% - 44px);
   float: left;
   height: 44px;
-  border-radius: 2px;
+  border-radius: 2px 0px 0px 2px;
   background-color: #ffffff;
   border: solid 1px #cccccc;
   margin-top: 8px;
-  display: block;
-  color: grey;
-  position: relative;
-  z-index: 0;
-}
-.tagSelect:focus{
+  display: inline-block;
+  font-size: 14px;
+  padding-left: 12px;
   color: black;
 }
+
 .addingTagBtn {
-  z-index:  2;
   width: 44px;
   height: 44px;
-  border-radius: 2px;
-  background-color: #ffde58;
-  display: block;
-  right: 0;
-  margin-right: 16px;
+  border: none;
+  border-radius: 0px 2px 2px 0px;
+  background-color: #f0ad4e;
+  display: inline-block;
   font-weight: bold;
   margin-top: 8px;
   margin-left: 0px;
-  position: absolute;
+  float: right;
+  font-size: 25px;
+
 }
 .tagCompany { 
   padding: 1px 2px 1px 2px;
@@ -263,8 +247,12 @@ body {
   margin-left: 80px;
 }
 
+.btn-group-vertical {
+  display: block;
+}
 .btn-group-vertical .btn{
-  width: 268px;
+  width: 100% ;
+  max-width: 268px;
   height: 36px;
   border: none;
   padding: 3px;
@@ -299,4 +287,23 @@ body {
   float: left;
   margin-right: 12px;
   margin-left: 0;
+}
+
+.open>.dropdown-menu {
+  margin-left: 80px;
+}
+ 
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #cccccc;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #cccccc;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #cccccc;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #cccccc;
 }
