@@ -261,9 +261,9 @@ body {
   border-radius: none;
 }
 
-.btn-group-vertical .btn:focus{
+.selectedButton{
   outline: none;
-  border-left: solid 3px #86A8DF;
+  border-left: solid 3px #86A8DF !important;
   background-color: #f4fafd !important;
 }
 .btn-group-vertical .btn:hover{
