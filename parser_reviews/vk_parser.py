@@ -58,7 +58,9 @@ class Vk_ParserReviews(ParserReviews):
 
     def _get_post_info(self, post, profile):
         d = dict.fromkeys(['name', 'post_link', 'text',
-                           'photo_link', 'date', 'temp_id'])
+                           'photo_link', 'date', 'temp_id', 'social_id'])
+
+        d['social_id'] = 0
 
         d['text'] = post['text']
         d['date'] = self._datetime_from_unixtime(post['date'])

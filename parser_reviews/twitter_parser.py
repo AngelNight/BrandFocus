@@ -43,8 +43,9 @@ class Twitter_ParserReviews(ParserReviews):
 
     def _get_tweet_info(self, tweet):
         d = dict.fromkeys(['name', 'post_link', 'text',
-                           'photo_link', 'date', 'temp_id'])
+                           'photo_link', 'date', 'temp_id', 'social_id'])
 
+        d['social_id'] = 1
         d['name'] = tweet.user.name
         d['post_link'] = self._get_post_link(tweet.user.screen_name, tweet.id)
         d['text'] = tweet.full_text
