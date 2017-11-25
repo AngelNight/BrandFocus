@@ -8,7 +8,6 @@
                 datatype: 'json',
                 success: function (result) {
                    var dataTagId = result;
-                   debugger;
                    if ($('.tagCompany[data-tag_id="' + dataTagId + '"]').length === 0){
                      document.getElementById('keyWords').value = "";
                      var newTag = document.createElement('div');
@@ -45,7 +44,6 @@
       }
      function checkingBox(){
         var inputTag = document.getElementById('keyWords').value;
-        var regExp
         if (inputTag.length > 1 /*&& inputTag.search(+)!=-1*/){
           $("#addBtn").removeAttr("disabled");
         }
@@ -70,25 +68,28 @@
           }
       }
       $(document).ready(function() {
-         $('.btnChooseFirm').click(function() {
-         $('.selectedButton').removeClass('selectedButton');
-         $(this).addClass('selectedButton');
-         var firm_id=$(this).attr('data-id');
-         $.ajax({
-                url: 'http://52.173.83.176/getTags/',
-                data: { 'firm_id': firm_id},
+         $('.btnChooseFirm').click(function(event) {
+            $('.selectedButton').removeClass('selectedButton');
+            var elem = $(event.target).closest('.btnChooseFirm');
+            elem.addClass('selectedButton');
+            var firm_id = elem.attr('data-id');
+            $.ajax({
+                url: '/getTags/?firm_id=' + firm_id,
+                data: { },
                 datatype: 'json',
                 success: function (result) {
                    console.log(result);
-                   placeTags(result);
+                   if ( result !== 'False' ){
+                       placeTags(result);
+                   }
                 },
-               error: function() {
-                   alert("Error");
-                   return;
+               error: function(error) {
+                   console.log(error.message);
+                   return error;
                }
             });
-   });
-})
+        });
+     });
 
       addBtn.addEventListener("click", addTag);
       $("#keyWords").keypress(checkingBox);
