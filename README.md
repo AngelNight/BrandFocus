@@ -20,7 +20,13 @@ pystemmer,
 vk_api(!)
 
 Итоговое приложение живет по адресу:
-http://13.84.171.59/ 
+http://52.173.83.176/
 
 про API VK читаем тут:
 https://habrahabr.ru/post/319178/ 
+
+Как создать приложение на Django:
+
+https://djbook.ru/rel1.4/intro/tutorial01.html
+
+https://djbook.ru/rel1.4/intro/tutorial02.html

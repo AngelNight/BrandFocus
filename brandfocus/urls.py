@@ -31,8 +31,10 @@ urlpatterns = [
 
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from brandfocus.views import home
 
 urlpatterns = [
     url(r'^$', home, name='home'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
