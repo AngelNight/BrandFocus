@@ -20,19 +20,19 @@
         <div class="searchSettings">
               <p>Отслеживаемые</p>
               <div class="btn-group-vertical">
-                <button type="button" class="btn btn-default btnChooseFirm" data-id="6">
+                <button type="button" class="btn btn-default" value="Тензор">
                   <img src="/static/images/tensor-logo.png">
                   <p>Тензор</p>
                 </button>
-                <button type="button" class="btn btn-default btnChooseFirm" data-id="7">
+                <button type="button" class="btn btn-default"">
                   <img src="/static/images/SBK-logo.png">
                   <p>СБК Контур</p>
                 </button>
-                <button type="button" class="btn btn-default btnChooseFirm" data-id="8">
+                <button type="button" class="btn btn-default"">
                   <img src="/static/images/microsoft-logo.png">
                   <p>Майкрософт</p>
                 </button>
-                <button type="button" class="btn btn-default btnChooseFirm" data-id="9">
+                <button type="button" class="btn btn-default"">
                   <img src="/static/images/mili-logo.png">
                   <p>Ресторан Мили</p>
                 </button>
@@ -43,10 +43,8 @@
         <div class = "searchSettings" id="focusing">
           <p>Фокусировка</p>
        <div>
-        <input id="keyWords" class="tagSelect" placeholder="Введите искомый тег" disabled>
-        	<button type="button" id="addBtn" class="addingTagBtn" disabled>+</button>
-        </input>
-        
+        <input id="keyWords" class="tagSelect" placeholder="Введите искомый тег">
+        <button type="button" id="addBtn" class="addingTagBtn" disabled>+</button>
       </div>
       <br clear="all"/>
       <div id="workingArea"></div>
@@ -61,32 +59,32 @@
               </div>
               <div class = "col-sm-6 upd">
                 <button type="button" class="btn btn-warning">Обновить</button>
-                <p>Обновлено...</p>
+                <p>Обновлено.</p>
               </div>
             </div>
 
             <div class = "button_row">
               <div class="btn-group">
-                <button type="button" class="btn btn-default">
+                <button id = "all" type="button" class="btn btn-default" onclick="filterReviews(this.id)">
                   <p id = "count_all">123</p>
                   <p id = "txt">Все</p>
                 </button>
-                <button type="button" class="btn btn-default">
+                <button id = "pos" type="button" class="btn btn-default" onclick="filterReviews(this.id)">
                   <p id = "count_pos">12</p>
                   <p id = "txt">Полож.</p>
                 </button>
-                <button type="button" class="btn btn-default">
+                <button id = "neg" type="button" class="btn btn-default" onclick="filterReviews(this.id)">
                   <p id = "count_neg">23</p>
                   <p id = "txt">Отриц.</p>
                 </button>
-                <button type="button" class="btn btn-default">
+                <button id = "any" type="button" class="btn btn-default" onclick="filterReviews(this.id)">
                   <p id = "count_any">1</p>
                   <p id = "txt">Неопред.</p>
                 </button>
               </div>
             </div>
 
-            <div class = "lenta_content">
+            <div class = "lenta_content" id = "lenta">
 
               <!--начало пробного комментария-->
               <div class = "feedback">
@@ -115,8 +113,8 @@
                     Стабильная ЗП; современное здание; молодой коллектив; корпоративные мероприятия; зоны отдыха для сотрудников; спорт.зал; возможность карьерного роста и т.д. 
                     Самое главное - это стабильная ЗП: ты точно знаешь, когда она придёт и сколько. 
                     Если говорят, что тут нет возможности карьерного роста - не верьте. Она есть! Всё зависит от человека, желания (в меньшей степени от отдела (в каждом отделе своя мотивация: где-то проще, где-то сложнее)). 
-                    Если ты разработчик, то ЗП повыше, чем у остальных, возможностей побольше. В других отделах перспектив поменьше, но они есть и зачастую немалые... 
-                    Руководство....ну оно и в Африке руководство! Не бывает идеального начальника. 
+                    Если ты разработчик, то ЗП повыше, чем у остальных, возможностей побольше. В других отделах перспектив поменьше, но они есть и зачастую немалые. 
+                    Руководствону оно и в Африке руководство! Не бывает идеального начальника. 
                     Но в целом, всё неплохо. Руководство адекватное. 
                   </p>
                 </div>
@@ -147,8 +145,8 @@
                     Стабильная ЗП; современное здание; молодой коллектив; корпоративные мероприятия; зоны отдыха для сотрудников; спорт.зал; возможность карьерного роста и т.д. 
                     Самое главное - это стабильная ЗП: ты точно знаешь, когда она придёт и сколько. 
                     Если говорят, что тут нет возможности карьерного роста - не верьте. Она есть! Всё зависит от человека, желания (в меньшей степени от отдела (в каждом отделе своя мотивация: где-то проще, где-то сложнее)). 
-                    Если ты разработчик, то ЗП повыше, чем у остальных, возможностей побольше. В других отделах перспектив поменьше, но они есть и зачастую немалые... 
-                    Руководство....ну оно и в Африке руководство! Не бывает идеального начальника. 
+                    Если ты разработчик, то ЗП повыше, чем у остальных, возможностей побольше. В других отделах перспектив поменьше, но они есть и зачастую немалые...
+                    Руководство....ну оно и в Африке руководство! Не бывает идеального начальника.
                     Но в целом, всё неплохо. Руководство адекватное. 
                   </p>
                 </div>
@@ -179,15 +177,21 @@
                     Стабильная ЗП; современное здание; молодой коллектив; корпоративные мероприятия; зоны отдыха для сотрудников; спорт.зал; возможность карьерного роста и т.д. 
                     Самое главное - это стабильная ЗП: ты точно знаешь, когда она придёт и сколько. 
                     Если говорят, что тут нет возможности карьерного роста - не верьте. Она есть! Всё зависит от человека, желания (в меньшей степени от отдела (в каждом отделе своя мотивация: где-то проще, где-то сложнее)). 
-                    Если ты разработчик, то ЗП повыше, чем у остальных, возможностей побольше. В других отделах перспектив поменьше, но они есть и зачастую немалые... 
-                    Руководство....ну оно и в Африке руководство! Не бывает идеального начальника. 
+                    Если ты разработчик, то ЗП повыше, чем у остальных, возможностей побольше. В других отделах перспектив поменьше, но они есть и зачастую немалые...
+                    Руководство....ну оно и в Африке руководство! Не бывает идеального начальника.
                     Но в целом, всё неплохо. Руководство адекватное. 
                   </p>
                 </div>
               </div>
+              <div class = "scroll" id="circleG">
+                <div id="circleG_1" class="circleG"></div>
+                <div id="circleG_2" class="circleG"></div>
+                <div id="circleG_3" class="circleG"></div>
+              </div>
               <!--конец пробного комментария-->
               
             </div>
+          </div>
           </div>
         </div>
       </div>
