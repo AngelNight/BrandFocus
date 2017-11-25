@@ -141,9 +141,11 @@ body {
   .content {
     margin-left: 2%;
     margin-right: 2%;
-    clear: both;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
-
+  .searchSettings { min-width: 430px; }
 }
 
 .searchSettings {
