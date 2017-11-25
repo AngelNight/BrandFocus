@@ -58,26 +58,26 @@
                 <p>Лента отзывов</p>
               </div>
               <div class = "col-sm-6 upd">
-                <button type="button" class="btn btn-warning">Обновить</button>
+                <button type="button" class="btn btn-warning" id = "upd">Обновить</button>
                 <p>Обновлено.</p>
               </div>
             </div>
 
             <div class = "button_row">
               <div class="btn-group">
-                <button id = "all" type="button" class="btn btn-default" onclick="filterReviews(this.id)">
+                <button id = "all" type="button" class="btn btn-default">
                   <p id = "count_all">123</p>
                   <p id = "txt">Все</p>
                 </button>
-                <button id = "pos" type="button" class="btn btn-default" onclick="filterReviews(this.id)">
+                <button id = "pos" type="button" class="btn btn-default">
                   <p id = "count_pos">12</p>
                   <p id = "txt">Полож.</p>
                 </button>
-                <button id = "neg" type="button" class="btn btn-default" onclick="filterReviews(this.id)">
+                <button id = "neg" type="button" class="btn btn-default">
                   <p id = "count_neg">23</p>
                   <p id = "txt">Отриц.</p>
                 </button>
-                <button id = "any" type="button" class="btn btn-default" onclick="filterReviews(this.id)">
+                <button id = "any" type="button" class="btn btn-default">
                   <p id = "count_any">1</p>
                   <p id = "txt">Неопред.</p>
                 </button>
@@ -149,6 +149,7 @@
                     Руководство....ну оно и в Африке руководство! Не бывает идеального начальника.
                     Но в целом, всё неплохо. Руководство адекватное. 
                   </p>
+
                 </div>
               </div>
               <div class = "feedback" style="background-color: #f8f8f8">
