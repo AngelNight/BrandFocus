@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+
+
 def home(request):
-    html = "<html><body>Hello World!</body></html>"
-    return HttpResponse(html)
+    return render(request, 'index.html', {})
