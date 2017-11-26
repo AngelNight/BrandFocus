@@ -41,8 +41,7 @@ class GoogleNews_ParserReviews(ParserReviews):
         return reviews
 
     def _get_article_info(self, article):
-        d = dict.fromkeys(['name', 'post_link', 'text',
-                           'photo_link', 'date', 'temp_id', 'social_id'])
+        d = {}
 
         d['social_id'] = 2
         d['name'] = article['source'].get('name')
