@@ -20,19 +20,19 @@
         <div class="searchSettings">
               <p>Отслеживаемые</p>
               <div class="btn-group-vertical">
-                <button type="button" class="btn btn-default" value="Тензор">
+                <button type="button" class="btn btn-default" value="Тензор" data-id = "1">
                   <img src="/static/images/tensor-logo.png">
                   <p>Тензор</p>
                 </button>
-                <button type="button" class="btn btn-default"">
+                <button type="button" class="btn btn-default" data-id = "2">
                   <img src="/static/images/SBK-logo.png">
                   <p>СБК Контур</p>
                 </button>
-                <button type="button" class="btn btn-default"">
+                <button type="button" class="btn btn-default" data-id = "3">
                   <img src="/static/images/microsoft-logo.png">
                   <p>Майкрософт</p>
                 </button>
-                <button type="button" class="btn btn-default"">
+                <button type="button" class="btn btn-default" data-id = "4">
                   <img src="/static/images/mili-logo.png">
                   <p>Ресторан Мили</p>
                 </button>
@@ -54,10 +54,10 @@
         <div class = "col-sm-8">
           <div class = "lenta">
             <div class = "row lenta_top">
-              <div class = "col-sm-6">
+              <div class = "col-sm-8">
                 <p>Лента отзывов</p>
               </div>
-              <div class = "col-sm-6 upd">
+              <div class = "col-sm-4 upd">
                 <button type="button" class="btn btn-warning" id = "upd">Обновить</button>
                 <p>Обновлено.</p>
               </div>
@@ -65,19 +65,19 @@
 
             <div class = "button_row">
               <div class="btn-group">
-                <button id = "all" type="button" class="btn btn-default">
+                <button btn-id = "2" type="button" class="btn btn-default">
                   <p id = "count_all">123</p>
                   <p id = "txt">Все</p>
                 </button>
-                <button id = "pos" type="button" class="btn btn-default">
+                <button btn-id = "1" type="button" class="btn btn-default">
                   <p id = "count_pos">12</p>
                   <p id = "txt">Полож.</p>
                 </button>
-                <button id = "neg" type="button" class="btn btn-default">
+                <button btn-id = "-1" type="button" class="btn btn-default">
                   <p id = "count_neg">23</p>
                   <p id = "txt">Отриц.</p>
                 </button>
-                <button id = "any" type="button" class="btn btn-default">
+                <button id = "0" type="button" class="btn btn-default">
                   <p id = "count_any">1</p>
                   <p id = "txt">Неопред.</p>
                 </button>
