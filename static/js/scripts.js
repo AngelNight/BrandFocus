@@ -149,11 +149,11 @@ function refreshReviews() {
       data: {},
       datatype: 'json',
       success: function (result) {
-         placeReviews(result, 2);
+         reviewsSelect();
       },
-     error: function() {
-         alert("Error");
-         return;
+     error: function(error) {
+          reviewsSelect();
+         return error;
      }
     });
   }
