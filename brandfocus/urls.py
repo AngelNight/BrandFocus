@@ -48,4 +48,5 @@ urlpatterns = [
     url(r'getRanks/$', getranks, name='getranks'),
     url(r'getSocials/$', getsocials, name='getsocials'),
     url(r'getReviewsData/$', getreviewsdata, name='getreviewsdata'),
+    url(r'generateRanks/$', generateranks, name='generateranks'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

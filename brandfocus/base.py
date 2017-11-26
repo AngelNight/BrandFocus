@@ -8,6 +8,7 @@ from psqlextra.models import PostgresModel
 from psqlextra.fields import HStoreField
 from django.db import models
 from psqlextra.query import ConflictAction
+from lib.neural_network.neural_network import calculating_rating
 
 
 
@@ -104,6 +105,8 @@ def deletetag(request):
         flag=False
     return HttpResponse(flag)
 
-
+def generateranks(request):
+    calculating_rating()
+    return HttpResponse(True)
 
 
