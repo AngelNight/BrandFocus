@@ -23,7 +23,9 @@ class Vk_ParserReviews(ParserReviews):
 
         self.last_request = 0.0
 
-    def get_reviews(self, tags, count):
+    def get_reviews(self, tags, count, use_geo=False):
+        self.use_geo = use_geo
+
         reviews = []
         for tag in tags:         
             response = self._vk_newsfeed_search(
@@ -36,6 +38,10 @@ class Vk_ParserReviews(ParserReviews):
     def _vk_newsfeed_search(self, **values):
         values['access_token'] = self.__SERVICE_KEY__
         values['v'] = self._VK_VERSION_
+
+        if self.use_geo:
+            values['latitude'] = 57.6309858
+            values['longitude'] = 39.8408914
 
         delay = self.RPS_DELAY - (time.time() - self.last_request)
 
@@ -106,6 +112,7 @@ class Vk_ParserReviews(ParserReviews):
         d['photo_link'] = profile['photo_100']
         d['post_link'] = self._get_post_link(
             screen_name=profile['screen_name'], user_id=post['owner_id'], post_id=post['id'])
+        d['photo_post_link'] = self._get_photo_link_post(post.get('attachments'))
 
         d['temp_id'] = '{}_{}'.format(post['owner_id'], post['id'])
 
@@ -121,3 +128,13 @@ class Vk_ParserReviews(ParserReviews):
         for profile in profiles:
             if profile['id'] == user_id:
                 return profile
+    
+    def _get_photo_link_post(self, attachments):
+        if attachments is None:
+            return ''
+        
+        for attach in attachments:
+            if attach['type'] == 'photo':
+                return attach['photo'].get('photo_604', '')
+        else:
+            return ''

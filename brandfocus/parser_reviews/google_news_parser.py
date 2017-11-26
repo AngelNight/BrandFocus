@@ -7,7 +7,7 @@ class GoogleNews_ParserReviews(ParserReviews):
     __API_KEY__ = '732cfb86dd784386960528b3da76bbd8'
     __URL__ = 'https://newsapi.org/v2/everything?source=google-news&q={}&language=ru&apiKey={}'
 
-    def get_reviews(self, tags, count):
+    def get_reviews(self, tags, count, use_geo=False):
         single_tags_query = '+OR+'.join(tag for tag in tags if tag.isalnum())
         multi_tags = [tag for tag in tags if not tag.isalnum()]
 
@@ -15,10 +15,13 @@ class GoogleNews_ParserReviews(ParserReviews):
         for tag in multi_tags:
             q = '+AND+'.join(tag.split())
             multi_tags_res.append('({})'.format(q))
+        
         multi_tags_query = '+OR+'.join(multi_tags_res)
 
-        if multi_tags_query:
+        if multi_tags_query and single_tags_query:
             query = '{}+OR+{}'.format(single_tags_query, multi_tags_query)
+        elif multi_tags_query:
+            query = multi_tags_query
         else:
             query = single_tags_query
 

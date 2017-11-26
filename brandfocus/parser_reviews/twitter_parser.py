@@ -11,7 +11,7 @@ class Twitter_ParserReviews(ParserReviews):
 
     __QUERY_TEMPLATE__ = "q={}&count={}&result_type=recent&lang=ru&tweet_mode=extended"
 
-    def get_reviews(self, tags, count):
+    def get_reviews(self, tags, count, use_geo=False):
         api = twitter.Api(
             consumer_key=self.__CONSUMER_KEY__,
             consumer_secret=self.__CONSUMER_SECRET__,
@@ -23,8 +23,9 @@ class Twitter_ParserReviews(ParserReviews):
 
         reviews = []
 
-        query = self.__QUERY_TEMPLATE__.format(single_tags, count)
-        reviews.extend(self._get_tweets(query, api))
+        if single_tags:
+            query = self.__QUERY_TEMPLATE__.format(single_tags, count)
+            reviews.extend(self._get_tweets(query, api))
 
         for tag in multi_tags:
             time.sleep(0.3)
@@ -35,6 +36,7 @@ class Twitter_ParserReviews(ParserReviews):
 
     def _get_tweets(self, query, api):
         reviews = []
+
         response = api.GetSearch(raw_query=query)
         for tweet in response:
             reviews.append(self._get_tweet_info(tweet))

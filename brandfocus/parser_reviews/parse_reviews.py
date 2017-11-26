@@ -4,8 +4,7 @@ from .twitter_parser import Twitter_ParserReviews
 from .vk_parser import Vk_ParserReviews
 
 
-
-def get_reviews(tags, count=100):
+def get_reviews(tags, count=100, use_geo=False):
     """Return reviews from social networks
 
     tags - tags for search
@@ -17,8 +16,8 @@ def get_reviews(tags, count=100):
     google_news = GoogleNews_ParserReviews()
 
     reviews = []
-    reviews.extend(vk.get_reviews(tags, count))
-    reviews.extend(twitter.get_reviews(tags, count))   
-    reviews.extend(google_news.get_reviews(tags, count))   
+    reviews.extend(vk.get_reviews(tags, count, use_geo))
+    reviews.extend(twitter.get_reviews(tags, count))
+    reviews.extend(google_news.get_reviews(tags, count))
 
     return reviews
