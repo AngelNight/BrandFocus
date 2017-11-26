@@ -1,7 +1,7 @@
       function addTag(){
         var keyWords = document.getElementById('keyWords').value;
         $.ajax({
-                url: 'http://52.173.83.176/insertTag/',
+                url: 'http://http://52.173.87.160//insertTag/',
                 data: { 'name': keyWords,
                         'firm_id': $('.selectedButton').attr("data-id")
                         },
@@ -30,7 +30,7 @@
         var tagElement = $(this),
             tagId = $(this).attr('data-tag_id');
           $.ajax({
-                url: 'http://52.173.83.176/deleteTag/?tag_id=' + tagId,
+                url: 'http://http://52.173.87.160//deleteTag/?tag_id=' + tagId,
                 data: { },
                 datatype: 'json',
                 success: function (result) {
@@ -136,7 +136,7 @@ $(document).ready(function() {
   $('#upd').click(function() {
     var firm_id = $('.btnChooseFirm').hasClass('selectedButton').attr('data-id');
     $.ajax({
-      url: 'http://52.173.83.176/getReviewsData/?firm_id='+firm_id,
+      url: 'http://http://52.173.87.160//getReviewsData/?firm_id='+firm_id,
       data: { 'firm_id': firm_id},
       datatype: 'json',
       success: function (result) {
@@ -155,7 +155,7 @@ $(document).ready(function() {
     var btn_id = $(this.attr('id'));
     var firm_id = $('.btnChooseFirm').hasClass('selectedButton');
     $.ajax({
-      url: 'http://52.173.83.176/getReviewsData/?firm_id='+firm_id,
+      url: 'http://http://52.173.87.160//getReviewsData/?firm_id='+firm_id,
       data: { 'firm_id': firm_id, 'btn_id': btn_id},
       datatype: 'json',
       success: function (result, btn_id ) {
