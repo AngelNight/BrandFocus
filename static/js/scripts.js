@@ -121,7 +121,11 @@ function placeReviews(result, btn_id){
   for(var i = 0, ln = reviewsArr.length; i<ln, reviewsArr[i].fields.rank>=-1; i++){
       rankArr[reviewsArr[i].fields.rank + 1]++;
       color = setReviewColor(reviewsArr[i].fields.rank);
-      feedbacks.appendChild(createReview(reviewsArr[i], color));
+      
+      if(btn_id==2)
+        feedbacks.appendChild(createReview(reviewsArr[i], color));
+      else if(btn_id==reviewsArr[i].fields.rank)
+        feedbacks.appendChild(createReview(reviewsArr[i], color));
    }
 
    var all = reviewsArr.length;
@@ -185,7 +189,7 @@ function reviewsSelect(){
 
 $(document).ready(function() {
   $('.btnChooseFirm').click(firmSelected);
-  $('.btn.btn-default').click(reviewsSelect);
+  $('.counter').click(reviewsSelect);
   $("#addBtn").click(addTag);
   $("#keyWords").keypress(checkingBox);
   $('#upd').click(refreshReviews);
