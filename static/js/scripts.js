@@ -14,7 +14,7 @@ function social(id){
 function addTag(){
   var keyWords = document.getElementById('keyWords').value;
   $.ajax({
-          url: '/insertTag/',
+          url: 'http://52.173.87.160//insertTag/',
           data: { 'name': keyWords,
                   'firm_id': $('.selectedButton').attr("data-id")
                   },
@@ -42,7 +42,7 @@ function deleteMySelf(){
   var tagElement = $(this),
       tagId = $(this).attr('data-tag_id');
     $.ajax({
-          url: '/deleteTag/?tag_id=' + tagId,
+          url: 'http://52.173.87.160/deleteTag/?tag_id=' + tagId,
           data: { },
           datatype: 'json',
           success: function (result) {
@@ -99,7 +99,7 @@ function createReview(reviewsArr, color){
   str += '<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="caret" float="right">Ошибка</span></button>';
   str += '<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3"><li role="presentation"><a role="menuitem" href="#">Положительный</a></li>';
   str += '<li role="presentation"><a role="menuitem" href="#">Отрицательный</a></li><li role="presentation"><a role="menuitem" href="#">Неопределенный</a></li></ul></div>';
-  str += '</div><div class = "feedback_text"><p id = "fb_text">'+ reviewsArr.fields.text +'</p>';
+  str += '</div><div class = "feedback_text"><p id = "fb_text">'+ reviewsArr[i].text +'</p>';
   str += '</div>';
 
   var curPost = document.createElement('div');
@@ -114,13 +114,21 @@ function placeReviews(result, btn_id){
   var color;
   var feedbacks = document.getElementById("lenta");
   while(feedbacks.firstChild){
+    $("#NoRev").hide();
     feedbacks.removeChild(feedbacks.firstChild);
   }
-
+  var rankArr = [0, 0, 0, 0];
   for(var i = 0, ln = reviewsArr.length; i<ln, reviewsArr[i].fields.rank>=-1; i++){
+      rankArr[reviewsArr[i].fields.rank + 1]++;
       color = setReviewColor(reviewsArr[i].fields.rank);
       feedbacks.appendChild(createReview(reviewsArr[i], color));
    }
+
+   var all = reviewsArr.length;
+   $('#count_all').html(all);
+   $('#count_pos').html(rankArr[2]);
+   $('#count_neg').html(rankArr[0]);
+   $('#count_any').html(rankArr[1]);
 }
 
 function firmSelected() {
