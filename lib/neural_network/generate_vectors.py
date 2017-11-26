@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from pretreatment_string import pretreatmenting_string
+from lib.neural_network.pretreatment_string import pretreatmenting_string
 
 def generate_array_of_post_words(posts):
 	result_array = []

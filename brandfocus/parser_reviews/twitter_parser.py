@@ -9,7 +9,7 @@ class Twitter_ParserReviews(ParserReviews):
     __ACCESS_TOKEN_KEY__ = '934117279188639746-3weCkBvUmwXIXrru5VCy29SCEVsWQhs'
     __ACCESS_TOKEN_SECRET__ = 'YcwxWkxtgY0uXeS8jVxl2DpSPOb3jKBeSBdMBi7lg1AbS'
 
-    __QUERY_TEMPLATE__ = "q={}&count={}&result_type=recent&lang=ru&tweet_mode=extended"
+    __QUERY_TEMPLATE__ = "q={}&count={}&lang=ru&tweet_mode=extended"
 
     def get_reviews(self, tags, count):
         api = twitter.Api(
@@ -22,12 +22,12 @@ class Twitter_ParserReviews(ParserReviews):
         multi_tags = [tag for tag in tags if not tag.isalnum()]
 
         reviews = []
-
-        query = self.__QUERY_TEMPLATE__.format(single_tags, count)
-        reviews.extend(self._get_tweets(query, api))
+        if single_tags:
+            query = self.__QUERY_TEMPLATE__.format(single_tags, count)
+            reviews.extend(self._get_tweets(query, api))
 
         for tag in multi_tags:
-            time.sleep(0.3)
+            time.sleep(0.5)
             query = self.__QUERY_TEMPLATE__.format(tag, count)
             reviews.extend(self._get_tweets(query, api))
 
@@ -42,7 +42,8 @@ class Twitter_ParserReviews(ParserReviews):
         return reviews
 
     def _get_tweet_info(self, tweet):
-        d = {}
+        d = dict.fromkeys(['name', 'post_link', 'text',
+                           'photo_link', 'date', 'temp_id', 'social_id'])
 
         d['social_id'] = 1
         d['name'] = tweet.user.name

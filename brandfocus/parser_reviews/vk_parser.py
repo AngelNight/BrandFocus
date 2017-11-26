@@ -1,8 +1,7 @@
 import datetime
-import http
 import re
-import requests
 import time
+import vk_api
 import Stemmer
 from .base_reviews import ParserReviews
 
@@ -11,54 +10,23 @@ class Vk_ParserReviews(ParserReviews):
     # __SERVICE_KEY__ = '41116ebc41116ebc41116ebcf3414ed8f34411141116ebc1b09d63d02220e5586386c94'
     # __SERVICE_KEY__ = 'e475eca0e475eca0e475eca028e449b634ee475e475eca0be635e2f7c43279f77aa1f9c'
     __SERVICE_KEY__ = '5790dcef5790dcef5790dcef4757cf6a0c557905790dcef0d89f79bcb448fccdcd020cb'
-    _VK_VERSION_  = '5.67'
-    RPS_DELAY = 0.2
-
-    def __init__(self):
-        self.http = requests.Session()
-        self.http.headers.update({
-            'User-agent': 'Mozilla/5.0 (Windows NT 6.1; rv:52.0) '
-                          'Gecko/20100101 Firefox/52.0'
-        })
-
-        self.last_request = 0.0
 
     def get_reviews(self, tags, count):
+        vk_session = vk_api.VkApi(token=self.__SERVICE_KEY__)
+        vk = vk_session.get_api()
+
         reviews = []
-        for tag in tags:         
-            response = self._vk_newsfeed_search(
+        for tag in tags:
+            time.sleep(0.5)
+            response = vk.newsfeed.search(
                 q='\"{}\"'.format(tag), extended=True, count=count)
             reviews_tag = self._get_reviews_by_tag(response, tag)
+            # print('---- {} ----'.format(tag))
             reviews.extend(reviews_tag)
 
         return reviews
 
-    def _vk_newsfeed_search(self, **values):
-        values['access_token'] = self.__SERVICE_KEY__
-        values['v'] = self._VK_VERSION_
-
-        delay = self.RPS_DELAY - (time.time() - self.last_request)
-
-        if delay > 0:
-            time.sleep(delay)
-
-        response = self.http.post(
-                'https://api.vk.com/method/newsfeed.search',
-                values
-            )
-
-        self.last_request = time.time()
-
-        if response.ok:
-            response = response.json()
-            return response['response']
-        else:
-            return None
-        
     def _get_reviews_by_tag(self, response, tag):
-        if response is None:
-            return None
-
         stemmer = Stemmer.Stemmer('russian')
         tags = stemmer.stemWords(tag.split())
 
@@ -89,7 +57,8 @@ class Vk_ParserReviews(ParserReviews):
         return reviews
 
     def _get_post_info(self, post, profile):
-        d = {}
+        d = dict.fromkeys(['name', 'post_link', 'text',
+                           'photo_link', 'date', 'temp_id', 'social_id'])
 
         d['social_id'] = 0
 

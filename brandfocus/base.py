@@ -8,7 +8,7 @@ from psqlextra.models import PostgresModel
 from psqlextra.fields import HStoreField
 from django.db import models
 from psqlextra.query import ConflictAction
-
+from lib.neural_network.neural_network import calculating_rating
 
 
 #Получение тегов
@@ -47,16 +47,16 @@ def getreviews(request):
 
     reviews=get_reviews(tags, 10)
     for review in reviews:
-        Review.objects.create(text=review['text'], photo_link=review['photo_link'], link=review['post_link'],
-                              date=review['date'], temp_id=review['temp_id'], social=Social.objects.get(pk=int(review['social_id'])+1),
+        Review.objects.on_conflict(['temp_id'], ConflictAction.UPDATE).insert(text=review['text'], photo_link=review['photo_link'], link=review['post_link'],
+                              date=review['date'], temp_id=review['temp_id'], social=Social.objects.get(pk=(review['social_id']+1)),
                               firm=Firm.objects.get(pk=int(request.GET.get('firm_id'))),
-                              rank=0)
+                              rank=2)
     return HttpResponse(True)
 
 #Получение Отзывов для вывода
 def getreviewsdata(request):
     try:
-        return HttpResponse(serializers.serialize('json',Review.objects.filter(firm=Firm.objects.get(pk=int(request.GET.get('firm_id')))).all()))
+        return HttpResponse(serializers.serialize('json',Review.objects.filter(firm=Firm.objects.get(pk=int(request.GET.get('firm_id')))).all().order_by('-date')))
     except Exception as e:
         return HttpResponse(False)
 
@@ -103,6 +103,10 @@ def deletetag(request):
     except Exception as e:
         flag=False
     return HttpResponse(flag)
+
+def generateranks(request):
+    calculating_rating()
+    return HttpResponse(True)
 
 
 

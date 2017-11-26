@@ -57,11 +57,11 @@ def calculating_rating():
     _update_rating(reviews_id, reviews_rank)
 
 def _initialize_rank(post, ad, spam):
-    if round(spam[0], 8) > round(VALUE_FOR_SPAM, 8) and round(ad[0], 8) > round(VALUE_FOR_AD, 8):
+    if round(spam[0], 6) > round(VALUE_FOR_SPAM, 6) and round(ad[0], 6) > round(VALUE_FOR_AD, 6):
         return -100
-    elif round(post[0], 8) > round(VALUE_FOR_POST, 8):
+    elif round(post[0], 6) > round(VALUE_FOR_POST, 6):
         return 1
-    elif round(post[0], 8) < round(VALUE_FOR_POST, 8):
+    elif round(post[0], 6) < round(VALUE_FOR_POST, 6):
         return -1
     else:
         return 0

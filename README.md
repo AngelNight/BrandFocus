@@ -30,10 +30,3 @@ https://habrahabr.ru/post/319178/
 https://djbook.ru/rel1.4/intro/tutorial01.html
 
 https://djbook.ru/rel1.4/intro/tutorial02.html
-
-
-Install package's:
-requests,
-vk_api,
-pystemmer,
-python-twitter
