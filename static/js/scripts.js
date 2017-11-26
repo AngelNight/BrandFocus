@@ -1,7 +1,7 @@
       function addTag(){
         var keyWords = document.getElementById('keyWords').value;
         $.ajax({
-                url: 'http://52.173.83.176/insertTag/',
+                url: '/insertTag/',
                 data: { 'name': keyWords,
                         'firm_id': $('.selectedButton').attr("data-id")
                         },
@@ -30,7 +30,7 @@
         var tagElement = $(this),
             tagId = $(this).attr('data-tag_id');
           $.ajax({
-                url: 'http://52.173.83.176/deleteTag/?tag_id=' + tagId,
+                url: '/deleteTag/?tag_id=' + tagId,
                 data: { },
                 datatype: 'json',
                 success: function (result) {
