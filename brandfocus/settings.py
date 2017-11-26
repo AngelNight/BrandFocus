@@ -30,8 +30,9 @@ ALLOWED_HOSTS = [
     '13.84.171.59',
     '127.0.0.1',
     '127.0.0.1:8000',
-    '13.84.171.59',
-    '52.173.83.176'
+    '52.173.83.176',
+    '52.173.196.154',
+    '52.173.87.160'
 ]
 
 
@@ -90,7 +91,7 @@ DATABASES = {
         'ENGINE': 'psqlextra.backend',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'qwerty',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -135,7 +136,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Additional locations of static files
 STATICFILES_DIRS = [
