@@ -143,7 +143,7 @@ function firmSelected() {
 
 function refreshReviews() {
     var firm_id = $('.btnChooseFirm.selectedButton').attr('data-id');
-    if(!firm_id){
+    if(firm_id){
     $.ajax({
       url: 'http://52.173.87.160/getReviews/?firm_id=' + firm_id,
       data: {},
