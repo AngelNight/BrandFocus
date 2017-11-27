@@ -99,7 +99,7 @@ function createReview(reviewsArr, color){
   str += '<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="caret" float="right">Ошибка</span></button>';
   str += '<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3"><li role="presentation"><a role="menuitem" href="#">Положительный</a></li>';
   str += '<li role="presentation"><a role="menuitem" href="#">Отрицательный</a></li><li role="presentation"><a role="menuitem" href="#">Неопределенный</a></li></ul></div>';
-  str += '</div><div class = "feedback_text"><p id = "fb_text">'+ reviewsArr[i].text +'</p>';
+  str += '</div><div class = "feedback_text"><p id = "fb_text">'+ reviewsArr.fields.text +'</p>';
   str += '</div>';
 
   var curPost = document.createElement('div');
@@ -118,14 +118,16 @@ function placeReviews(result, btn_id){
     feedbacks.removeChild(feedbacks.firstChild);
   }
   var rankArr = [0, 0, 0, 0];
-  for(var i = 0, ln = reviewsArr.length; i<ln, reviewsArr[i].fields.rank>=-1; i++){
-      rankArr[reviewsArr[i].fields.rank + 1]++;
-      color = setReviewColor(reviewsArr[i].fields.rank);
-      
-      if(btn_id==2)
-        feedbacks.appendChild(createReview(reviewsArr[i], color));
-      else if(btn_id==reviewsArr[i].fields.rank)
-        feedbacks.appendChild(createReview(reviewsArr[i], color));
+  for(var i = 0, ln = reviewsArr.length; i<ln; i++){
+      if(reviewsArr[i] && reviewsArr[i].fields.rank>=-1){
+          rankArr[reviewsArr[i].fields.rank + 1]++;
+          color = setReviewColor(reviewsArr[i].fields.rank);
+
+          if(btn_id==2)
+            feedbacks.appendChild(createReview(reviewsArr[i], color));
+          else if(btn_id==reviewsArr[i].fields.rank)
+            feedbacks.appendChild(createReview(reviewsArr[i], color));
+          }
    }
 
    var all = reviewsArr.length;
@@ -145,6 +147,7 @@ function firmSelected() {
       datatype: 'json',
       success: function (result) {
          placeTags(result);
+         reviewsSelect();
       },
      error: function(error) {
          alert("Error");
@@ -171,7 +174,7 @@ function refreshReviews() {
   }
 }
 function reviewsSelect(){
-    var btn_id = $(this).attr('btn-id');
+    var btn_id = $(this).attr('btn-id') || 2;
     var firm_id = $('.btnChooseFirm.selectedButton').attr('data-id');
     $.ajax({
       url: 'http://52.173.87.160/getReviewsData/?firm_id='+firm_id,

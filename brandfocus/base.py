@@ -46,7 +46,10 @@ def getreviews(request):
     tags_object = Tag.objects.filter(firm=Firm.objects.get(pk=int(request.GET.get('firm_id')))).all()
     tags = [tag.name for tag in tags_object]
 
-    reviews=get_reviews(tags, 10)
+    if int(request.GET.get('firm_id')) == 4:
+        reviews = get_reviews(tags, 10, True)
+    else:
+        reviews=get_reviews(tags, 10)
     for review in reviews:
         Review.objects.create(text=review['text'], photo_link=review['photo_link'], link=review['post_link'],
                               date=review['date'], temp_id=review['temp_id'], social=Social.objects.get(pk=int(review['social_id'])+1),
